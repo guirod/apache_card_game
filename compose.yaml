@@ -1,0 +1,13 @@
+volumes:
+  db-data:
+networks:
+  network1:
+    name: docker-lamp_default
+    external: true
+services:
+  apache_cards:
+    build: .
+    ports:
+      - "8888:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
